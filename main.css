@@ -1,0 +1,56 @@
+body {
+    font-family: "Montserrat";
+    font-size: 0.9rem;
+}
+
+.limegreen1 {
+    color: limegreen;
+}
+
+.limegreen {
+    color: limegreen;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.absatz {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Navigation */
+
+.nav-link {
+    cursor: pointer;
+}
+
+.navbar,
+.carousel {
+    border-bottom: 1px solid grey;
+}
+
+.nav-link:active,
+.nav-link:hover {
+    color: limegreen !important;
+}
+
+/* Slider */
+
+.slider-image {
+    width: 100vw;
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+}
+
+/* liste */
+.liste1 {
+    font-size: 0.9rem;
+}
+
+/* footer */
+.footer {
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 1px solid grey;
+}
