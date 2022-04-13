@@ -3,30 +3,14 @@ body {
     font-size: 0.9rem;
 }
 
-.limegreen1 {
-    color: limegreen;
-}
-
 .limegreen {
     color: limegreen;
-    text-align: center;
-    font-size: 1.5rem;
 }
 
-.absatz {
-    text-align: center;
-    margin-top: 15px;
-}
-
-/* Navigation */
+/* navigation */
 
 .nav-link {
     cursor: pointer;
-}
-
-.navbar,
-.carousel {
-    border-bottom: 1px solid grey;
 }
 
 .nav-link:active,
@@ -34,32 +18,25 @@ body {
     color: limegreen !important;
 }
 
-/* Slider */
-
-.slider-image {
-    width: 100vw;
-    height: 70vh;
-    background-position: center;
-    background-size: cover;
-}
-/* Schriften */
+/* fonts */
 h1 {
     color: limegreen;
   }
 
 /* button */
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: limegreen !important;
-}
 
-/* liste */
-.liste1 {
-    font-size: 0.9rem;
+.btn-primary {
+    color: black;
+    background-color: white;
+    border-color: limegreen 
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: white;
+    background-color:limegreen;
+    border-color: white; /*set the color you want here*/
 }
 
 /* footer */
 .footer {
     font-size: 0.8rem;
-    text-align: center;
-    border-top: 1px solid grey;
 }
