@@ -2,15 +2,16 @@
 $.get('/api', function (result) {
   let html = '';
   for (let row of result) {
+    console.log(row)
     let row_html = `
         <tr>
-          <th scope="row">${row[0]}</th>
-          <td>${row[1]}</td>
-          <td>${row[2]}</td>
-          <td>${row[3]}</td>
-          <td>${row[4]}</td>
-          <td>${row[5]}</td>
-          <td>${row[6]}</td>
+          <th scope="row">${row['Rank']}</th>
+          <td>${row['Title']}</td>
+          <td>${row['Artist']}</td>
+          <td>${row['Date']}</td>
+          <td>${row['Region']}</td>
+          <td>${row['Streams']}</td>
+          <td>${row['URL']}</td>
         </tr>
         `
 
