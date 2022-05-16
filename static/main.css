@@ -21,20 +21,23 @@ body {
 /* fonts */
 h1 {
     color: limegreen;
-  }
+}
 
 /* button */
 
-.btn-primary {
+#region-select {
     color: black;
     background-color: white;
-    border-color: limegreen 
+    border-color: limegreen
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+
+
+#region-select:hover {
     color: white;
-    background-color:limegreen;
-    border-color: white; /*set the color you want here*/
+    background-color: limegreen;
+    border-color: white;
 }
+
 
 /* footer */
 .footer {

@@ -1,51 +1,64 @@
 # flask nutzen (pip install flask, oder zum install auf der flask-Homepage schauen)
+from datetime import date
 from flask import Flask, request, jsonify, render_template
 import csv
+import pandas as pd
+import json
 
 # Flask-App erzeugen
 app = Flask(__name__)
 
-def daten():
-    data = []
-    with open('static/charts_only_monday_top200.csv', "r") as file:
-        my_reader = csv.reader(file, delimiter=',')
-        for row in my_reader:
-            # title,rank,date,artist,url,region,streams
-            a, b, Title, Rank, Date, Artist, URL, Region, Streams = row
-            track = {"Rank": Rank,
-            "Title": Title,
-            "Artist": Artist,
-            "Date": Date,
-            "Region": Region,
-            "Streams": Streams,
-            "URL": URL
-            }
-            data.append(track)
+# im Server laden wir alle Daten, pandas wird genutzt
+# unnütze Spalten werden gelöscht
+# index auf Region zum schnellen Nachschlagen
+data = pd.read_csv('WebDev_Spotify\static\charts_only_monday_top200.csv').drop(
+    ['Unnamed: 0', 'Unnamed: 0.1'], axis=1).set_index('region')
 
-    return jsonify(data[1:])
-
-# unsere Hauptseite, liegt jetzt im Ordner templates
+    
 @app.route('/')
 def index():
     return render_template('index.html')
 
 # unsere Datenquelle / "API", liefert im Moment Daten nach Land aus (Land wird als Argument an die URL gehängt)
+
+
 @app.route('/api')
 def api():
-    return daten()
-
-    # Rohdaten, die müsst Ihr aus Euerer Datenquelle lesen (TODO)
-    
+    # TODO hier sollte man auch noch nach Datum die Daten filtern
 
 
-    # nur die Zeilen auswählen, die dem gesuchten Land entsprechen
-    #result = []
-    #for row in data:
-       #if row[4] == land:
-           #result.append(row)
 
-    # Daten als JSON-Text ausliefern (kann man im Browser gut anschauen)
-    #return jsonify(data)
+    # gesuchte Region aus der URL holen
+    suchregion = request.args.get('region', 'Switzerland')
+
+    # Daten für eine Region aus der Tabelle holen (dafür ist der Index da)
+    result = data.loc[suchregion]
+
+    # Daten in json übersetzen
+    track_data = []
+    for index, row in result.iterrows():
+        track = {"Rank": row['rank'],
+                 "Title": row['title'],
+                 "Artist": row['artist'],
+                 "Date": row['date'],
+                 "Region": index,
+                 "Streams": row['streams'],
+                 "URL": row['url']
+                 }
+        track_data.append(track)
+
+    # # Liniendiagramm Streams
+    # dates = float(track_data['date'])
+    # streaming = int(track_data['streams'])
+
+    # df_dates_Streams = pd.DataFrame(
+    #     { 'date' : dates, 'streaming' : 'streaming'}
+    # )
+
+    # df_dates_Streams
+
+    # zurücksenden
+    return jsonify(track_data)
 
 # Start von dem Flask Server
 app.run(debug=True)
