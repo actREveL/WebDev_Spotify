@@ -4,6 +4,10 @@ from flask import Flask, request, jsonify, render_template
 import csv
 import pandas as pd
 import json
+# from IPython.display import display, HTML
+
+# from flask_wtf import Form
+# from wtforms import DateField
 
 # Flask-App erzeugen
 app = Flask(__name__)
@@ -47,18 +51,13 @@ def api():
                  }
         track_data.append(track)
 
-    # # Liniendiagramm Streams
-    # dates = float(track_data['date'])
-    # streaming = int(track_data['streams'])
-
-    # df_dates_Streams = pd.DataFrame(
-    #     { 'date' : dates, 'streaming' : 'streaming'}
-    # )
-
-    # df_dates_Streams
-
+    # region_data = track_data.index()
+    # for index, row in result.iterrows():
+        # country = index
+        # return country
+    
     # zurücksenden
-    return jsonify(track_data)
+    return jsonify(track_data)  # country=country
 
 # Start von dem Flask Server
 app.run(debug=True)

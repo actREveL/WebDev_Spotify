@@ -22,7 +22,7 @@ function loadTable(region) {
             <td>${row['Date']}</td>
             <td>${row['Region']}</td>
             <td>${row['Streams']}</td>
-            <td>${row['URL']}</td>
+            <td><a href="${row['URL']}">Link</a></td>
           </tr>
           `
 
@@ -32,16 +32,28 @@ function loadTable(region) {
     $('#table-body').html(html);
   })
 }
+// function countries() {
+//   for (row in result) {
+//     let row_region = $(row['Region'])
+//   }
+//   console.log(row_region)
+// }
+
+// countries()
+
+
 
 // prevent changing weeks and months
-var weekOptions = {
-  "changeMonth": false, "changeYear": false, "stepMonths": 0, beforeShowDay: function (date) {
-    return [date.getDay() == 1, ''];
-  }
-};
+// var weekOptions = {
+//   "changeMonth": false, "changeYear": false, "stepMonths": 0, beforeShowDay: function (date) {
+//     return [date.getDay() == 1, ''];
+//   }
+// };
 
-$(function () {
-  $(".week").datepicker("option", weekOptions);
-});
+// $(function () {
+//   $(".week").datepicker("option", weekOptions);
+// });
+
+// Datepicker
 
 loadTable('Switzerland')
