@@ -32,16 +32,27 @@ function loadTable(region) {
     $('#table-body').html(html);
   })
 }
-// function countries() {
-//   for (row in result) {
-//     let row_region = $(row['Region'])
-//   }
-//   console.log(row_region)
-// }
 
+// Liste für Länder (Ohne Duplikate) soll erstellt werden, wodruch im HTML File nachher diese Daten im Dropdown 
+//angezeigt werden können etc.
+
+// function countries() {
+//   let land = $get('/api')
+//   for (row in land) {
+//     let row_country = $(row['Region'])
+//     if (country.includes(row_country)) {
+
+//     } else {
+//       country = country + row_country
+//       console.log(country)
+//     }
+//   }
+// }
 // countries()
 
 
+
+// wenn nur Montag ausgewählt werden soll
 
 // prevent changing weeks and months
 // var weekOptions = {
