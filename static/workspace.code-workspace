@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../FS 2022/MIOT"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

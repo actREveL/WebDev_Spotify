@@ -14,15 +14,17 @@ function loadTable(region) {
   $.get('/api?region=' + region, function (result) {
     let html = '';
     for (let row of result) {
+      let d = new Date(row['date'])
+      let dStr = `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`
       let row_html = `
           <tr>
-            <th scope="row">${row['Rank']}</th>
-            <td>${row['Title']}</td>
-            <td>${row['Artist']}</td>
-            <td>${row['Date']}</td>
-            <td>${row['Region']}</td>
-            <td>${row['Streams']}</td>
-            <td><a href="${row['URL']}">Link</a></td>
+            <th scope="row">${row['rank']}</th>
+            <td>${row['title']}</td>
+            <td>${row['artist']}</td>
+            <td>${dStr}</td>
+            <td>${row['region']}</td>
+            <td>${row['streams']}</td>
+            <td><a href="${row['url']}">Link</a></td>
           </tr>
           `
 
@@ -36,19 +38,18 @@ function loadTable(region) {
 // Liste für Länder (Ohne Duplikate) soll erstellt werden, wodruch im HTML File nachher diese Daten im Dropdown 
 //angezeigt werden können etc.
 
-// function countries() {
-//   let land = $get('/api')
-//   for (row in land) {
-//     let row_country = $(row['Region'])
-//     if (country.includes(row_country)) {
+function countries() {
+   $.get('/apicountry', function(country){
+     let countrylist = '<option selected>Select country ...</option>'
+     for(row of country){
+       let row_country =`<option>${row}</option>`
+       countrylist = countrylist + row_country
+      }
+    $('#region-selected').html(countrylist)
+   })
+  } 
 
-//     } else {
-//       country = country + row_country
-//       console.log(country)
-//     }
-//   }
-// }
-// countries()
+ countries()
 
 
 
