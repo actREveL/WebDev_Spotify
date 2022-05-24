@@ -1,7 +1,7 @@
 # flask nutzen (pip install flask, oder zum install auf der flask-Homepage schauen)
 import datetime
 from datetime import date
-from aiohttp import TraceDnsCacheHitParams
+# from aiohttp import TraceDnsCacheHitParams
 from flask import Flask, request, jsonify, render_template, make_response
 import csv
 import pandas as pd
