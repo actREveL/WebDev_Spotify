@@ -1,4 +1,7 @@
 
+// braucht man evtl. für Default-Werte:
+// var region = 'Switzerland';
+// var date = '2017-01-01';
 
 // Event-Handler für Veränderung im Länder-Select
 $('#region-selected').change(function () {
@@ -6,6 +9,16 @@ $('#region-selected').change(function () {
 
   // Daten eines bestimmten Landes laden
   loadTable(selected, '2017-01-02')
+});
+
+
+// Datepicker -> muss noch mit Datenbank verbunden werden + change Event o.ä.
+$(function date() {
+  $("#datepicker").datepicker({
+    dateFormat: 'yy-mm-dd',
+    minDate: '2017-01-01',
+    maxDate: '2021-12-31'
+  });
 });
 
 
@@ -50,20 +63,5 @@ function countries() {
 }
 
 countries()
-
-
-
-// wenn nur Montag ausgewählt werden soll
-
-// prevent changing weeks and months
-// var weekOptions = {
-//   "changeMonth": false, "changeYear": false, "stepMonths": 0, beforeShowDay: function (date) {
-//     return [date.getDay() == 1, ''];
-//   }
-// };
-
-$(function () {
-  $("#datepicker").datepicker();
-});
 
 // loadTable('Argentina', '2017-01-02')
