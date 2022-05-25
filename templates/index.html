@@ -72,12 +72,12 @@
       <div class="row">
         <div class="col-2">
           <select class="form-select" aria-label="Default select example" id="region-selected">
-            
-              <!-- <option id="country_pic">{{ country }}</option> 
+
+            <!-- <option id="country_pic">{{ country }}</option> 
               <option value="Switzerland">Switzerland</option>
               <option value="Argentina">Argentina</option>
               <option value="Germany">Germany</option> -->
-            
+
           </select>
         </div>
       </div>
@@ -86,39 +86,33 @@
     <div class="container" style="padding-top: 20px;">
       <h2 class="py-2">Choose a week...</h2>
       <form class="row">
-        <label for="date" class="col-1 col-form-label">Date</label>
-        <div class="col-5">
-          <div class="input-group date">
-            <input type="text" class="form-control" id="datepicker">
-            <span class="input-group-append">
-              <span class="input-group-text bg-light d-block">
-                <i class="fa-solid fa-calendar-days"></i>
-              </span>
-            </span>
-          </div>
-        </div>
-      </form>
+        <p>Date: <input type="text" id="datepicker"></p>
+
+        </span>
     </div>
+  </div>
+  </form>
+  </div>
 
 
-    <!-- Table f.e. with AGgrid (https://www.ag-grid.com)-->
-    <div class="container" style="padding-top: 20px;">
-      <table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Rank</th>
-            <th scope="col">Title</th>
-            <th scope="col">Artist</th>
-            <th scope="col">Date</th>
-            <th scope="col">Region</th>
-            <th scope="col">Streams</th>
-            <th scope="col">URL</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
-    </div>
+  <!-- Table f.e. with AGgrid (https://www.ag-grid.com)-->
+  <div class="container" style="padding-top: 20px;">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Title</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Date</th>
+          <th scope="col">Region</th>
+          <th scope="col">Streams</th>
+          <th scope="col">URL</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
   </div>
 
   <!-- Footer -->
@@ -140,6 +134,11 @@
 
   <script src="static\code.js"></script>
   <script type="text/javascript" src="bootstrap-datepicker.de.js" charset="UTF-8"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 </body>
 
 </html>

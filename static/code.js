@@ -1,14 +1,11 @@
 
 
 // Event-Handler für Veränderung im Länder-Select
-$('#region-select').change(function (value) {
-  var selected = $('#region-select').val();
-  // $('#region-select').change(function () {
-  // let selected = alert($(this).val());
-  // })
+$('#region-selected').change(function () {
+  var selected = $('#region-selected').val();
 
   // Daten eines bestimmten Landes laden
-  loadTable(selected, date)
+  loadTable(selected, '2017-01-02')
 });
 
 
@@ -65,10 +62,8 @@ countries()
 //   }
 // };
 
-// $(function () {
-//   $(".week").datepicker("option", weekOptions);
-// });
+$(function () {
+  $("#datepicker").datepicker();
+});
 
-// Datepicker
-
-loadTable('Argentina', '2017-01-02')
+// loadTable('Argentina', '2017-01-02')
