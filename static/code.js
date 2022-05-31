@@ -2,13 +2,15 @@
 // braucht man evtl. für Default-Werte:
 // var region = 'Switzerland';
 // var date = '2017-01-01';
-
+let regionSelected = 'Switzerland'
+let dateSelected = '2017-01-02'
+loadTable()
 // Event-Handler für Veränderung im Länder-Select
 $('#region-selected').change(function () {
-  var selected = $('#region-selected').val();
+   regionSelected = $('#region-selected').val();
 
-  // Daten eines bestimmten Landes laden
-  loadTable(selected, '2017-01-02')
+   // Daten eines bestimmten Datums laden
+   loadTable()
 });
 
 
@@ -21,10 +23,18 @@ $(function date() {
   });
 });
 
+// Event-Handler für Veränderung im Datum-Select
+$('#datepicker').change(function(){
+  dateSelected = $('#datepicker').val();
+
+  // Daten eines bestimmten Datums laden
+  loadTable()
+})
+
 
 // Hilfsfunktion, lädet Daten für eine bestimmte Region -> http://127.0.0.1:5000/api?region=Argentina&date=2017-01-02
-function loadTable(region, dateSelected) {
-  $.get('/api?region=' + region + '&date=' + dateSelected, function (result) {
+function loadTable() {
+  $.get('/api?region=' + regionSelected + '&date=' + dateSelected, function (result) {
     let html = '';
     for (let row of result) {
       let d = new Date(row['date'])
