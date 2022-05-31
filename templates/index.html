@@ -48,7 +48,7 @@
             <a class="nav-link active" aria-current="page" href="#">Table</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="visualisation.html">Visualisation</a>
+            <a class="nav-link" href="https://open.spotify.com" target=”_blank”>Open Spotify</a>
           </li>
         </ul>
       </div>
@@ -58,7 +58,7 @@
   <!--Introduction-->
   <div class="container" style="padding-top: 20px;">
     <div class="row">
-      <div class="col-8">
+      <div class="col-10">
         <h1>Sportify Charts</h1>
         <h3>A set of all daily hit charts curated by Spotify from 2017 to 2021</h3>
         <p>We present you a full list of charts curated by Spotify by day as well as by country.<br>
@@ -74,14 +74,12 @@
       <div class="col-2">
         <select class="form-select" aria-label="Default select example" id="region-selected"></select>
       </div>
+      <div class="col-2">
+        <form class="row" >
+          <input type="text" class="form-control" placeholder="Select monday" id="datepicker">
+        </form>
+      </div>
     </div>
-  </div>
-
-  <div class="container" style="padding-top: 20px;">
-    <h2 class="py-2">Choose a week...</h2>
-    <form class="row">
-      <p>Date: <input type="text" id="datepicker"></p>
-    </form>
   </div>
 
 
@@ -96,7 +94,7 @@
           <th scope="col">Date</th>
           <th scope="col">Region</th>
           <th scope="col">Streams</th>
-          <th scope="col" class="link">URL</th>
+          <th scope="col">URL</th>
         </tr>
       </thead>
       <tbody id="table-body">

@@ -26,6 +26,7 @@ $(function date() {
 // Event-Handler für Veränderung im Datum-Select
 $('#datepicker').change(function(){
   dateSelected = $('#datepicker').val();
+  // Nur Montag laden: https://stackoverflow.com/questions/6558535/find-the-date-for-the-first-monday-after-a-given-date 
 
   // Daten eines bestimmten Datums laden
   loadTable()
