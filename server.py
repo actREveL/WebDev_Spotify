@@ -12,7 +12,6 @@ app = Flask(__name__)
 data = pd.read_csv('static/charts_only_monday_top200.csv', parse_dates=[4]).drop(
     ['Unnamed: 0', 'Unnamed: 0.1'], axis=1)
 
-
     
 @app.route('/')
 def index():
@@ -26,7 +25,7 @@ def api():
     suchdate = request.args.get('date', '2017-01-02')
 
     # Daten für eine Region aus der Tabelle holen (dafür ist der Index da)
-    result = data[(data.region == suchregion) & (data.date == suchdate)]  #sorteddates
+    result = data[(data.region == suchregion) & (data.date == suchdate)]
 
     track_data = result.to_json(orient="records")
     
@@ -41,5 +40,5 @@ def apicountry():
     countries=data.region.unique().tolist()
     return jsonify(countries)
 
-# Start von dem Flask Server
+# Start Flask Server
 app.run(debug=True)
