@@ -2,6 +2,7 @@ from datetime import date
 from flask import Flask, request, jsonify, render_template, make_response
 import pandas as pd
 
+
 # Flask-App erzeugen
 app = Flask(__name__)
 

@@ -1,4 +1,3 @@
-
 // Default-Werte
 let regionSelected = 'Switzerland'
 let dateSelected = '2017-01-02'
@@ -11,7 +10,6 @@ $('#region-selected').change(function () {
   // Daten eines bestimmten Datums laden
   loadTable()
 });
-
 
 // Datepicker
 $(function date() {
@@ -34,7 +32,6 @@ $('#datepicker').change(function () {
   loadTable()
 })
 
-
 // Hilfsfunktion, lädt Daten für eine bestimmte Region -> Bsp.: http://127.0.0.1:5000/api?region=Argentina&date=2017-01-02
 function loadTable() {
   $.get('/api?region=' + regionSelected + '&date=' + dateSelected, function (result) {
@@ -53,7 +50,6 @@ function loadTable() {
             <td><a href="${row['url']}">Link</a></td>
           </tr>
           `
-
       html = html + row_html;
     }
 
